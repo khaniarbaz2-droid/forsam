@@ -1,44 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Sampriti ❤️</title>
+
 <style>
 body{
 margin:0;
-height:100vh;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-font-family:Arial,sans-serif;
+height:100vh;
 text-align:center;
 }
+
 .card{
 background:white;
-padding:35px;
-border-radius:20px;
-max-width:650px;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
+padding:30px;
+border-radius:25px;
+max-width:700px;
+width:90%;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+position:relative;
+z-index:10;
 }
+
 h1{color:#ff4d6d;}
-p{font-size:18px;line-height:1.7;}
+
+button{
+padding:12px 24px;
+border:none;
+border-radius:30px;
+background:#ff4d6d;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-top:15px;
+}
 </style>
 </head>
 <body>
+
 <div class="card">
-<h1>❤️ For Sampriti ❤️</h1>
-<p>
-Hey Love,<br><br>
-I know you're not feeling well right now, so I wanted to remind you of something.<br><br>
-For the last 3 years you've been one of the best things in my life.
-Your smile makes my days better, and seeing you happy makes me happy too.<br><br>
-So today, please rest, take care of yourself, and don't worry about anything.
-You are loved, appreciated, and cared for more than you know. ❤️<br><br>
-Get well soon, beautiful. 🫶<br><br>
-— Arbaz
-</p>
+<h1>❤️ Hey Sampriti ❤️</h1>
+<p id="typing"></p>
+
+<button onclick="showSurprise()">Open Your Surprise 🎁</button>
+
+<div id="surprise" style="display:none;">
+<h3>Reasons I Love You ❤️</h3>
+<button onclick="randomReason()">Show Me 🥺</button>
+<div id="reason"></div>
 </div>
+</div>
+
+<script>
+const message =
+"I know you're not feeling well today, so I made something just for you. After 3 years together, seeing you smile still makes my day better ❤️";
+
+let i=0;
+function typeWriter(){
+ if(i<message.length){
+  document.getElementById("typing").innerHTML += message.charAt(i);
+  i++;
+  setTimeout(typeWriter,40);
+ }
+}
+typeWriter();
+
+function showSurprise(){
+ document.getElementById("surprise").style.display="block";
+}
+
+const reasons=[
+"Your smile brightens my day ❤️",
+"You make ordinary moments special ❤️",
+"You stayed with me for 3 amazing years ❤️",
+"You're stronger than you think ❤️",
+"Because you're Sampriti ❤️"
+];
+
+function randomReason(){
+ let r=Math.floor(Math.random()*reasons.length);
+ document.getElementById("reason").innerHTML=reasons[r];
+}
+</script>
+
 </body>
 </html>
