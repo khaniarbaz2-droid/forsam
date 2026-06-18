@@ -45,48 +45,31 @@ margin-top:15px;
 </head>
 <body>
 
-<div class="card">
 <h1>❤️ Hey Sampriti ❤️</h1>
-<p id="typing"></p>
 
-<button onclick="showSurprise()">Open Your Surprise 🎁</button>
+<button onclick="surprise1()">Tap for Surprise 🎁</button>
 
-<div id="surprise" style="display:none;">
-<h3>Reasons I Love You ❤️</h3>
-<button onclick="randomReason()">Show Me 🥺</button>
-<div id="reason"></div>
-</div>
-</div>
+<p id="msg"></p>
 
 <script>
-const message =
-"I know you're not feeling well today, so I made something just for you. After 3 years together, seeing you smile still makes my day better ❤️";
+let step=0;
 
-let i=0;
-function typeWriter(){
- if(i<message.length){
-  document.getElementById("typing").innerHTML += message.charAt(i);
-  i++;
-  setTimeout(typeWriter,40);
- }
-}
-typeWriter();
+function surprise1(){
 
-function showSurprise(){
- document.getElementById("surprise").style.display="block";
-}
-
-const reasons=[
-"Your smile brightens my day ❤️",
-"You make ordinary moments special ❤️",
-"You stayed with me for 3 amazing years ❤️",
-"You're stronger than you think ❤️",
-"Because you're Sampriti ❤️"
+const surprises=[
+"🎁 Surprise #1: You're the cutest girl I know ❤️",
+"🌹 Surprise #2: Your smile can fix my worst day ❤️",
+"🧸 Surprise #3: Virtual Hug Unlocked 🤗",
+"💊 Surprise #4: Doctor says you need rest, water and one Arbaz hug ❤️",
+"🏆 Surprise #5: Best Girlfriend Award goes to Sampriti ❤️",
+"🥺 Surprise #6: I miss you",
+"❤️ Final Surprise: Thank you for making the last 3 years beautiful. I love you ❤️"
 ];
 
-function randomReason(){
- let r=Math.floor(Math.random()*reasons.length);
- document.getElementById("reason").innerHTML=reasons[r];
+document.getElementById("msg").innerHTML=surprises[step];
+
+if(step<surprises.length-1)
+step++;
 }
 </script>
 
